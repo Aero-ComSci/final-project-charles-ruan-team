@@ -2,7 +2,7 @@ ice_cream = {"Vanilla": 2.5, "Chocolate": 3.0}
 cuisines = {
     "Latin": ["Pasta", "Tiramisu"],
     "Chinese": ["Dumplings", "Fried Rice"],
-    "Spanish": ["Tacos", "Paella"],
+    "Spanish": ["Tacos", "Fajitas"],
     "French": ["Croissant", "Quiche"]
 }
 
