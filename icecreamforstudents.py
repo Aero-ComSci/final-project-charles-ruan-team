@@ -13,12 +13,10 @@ students = {
 }
 
 for name in students:
-    print("\n" + name + "'s Courses and Food:")
+    print(name + ":")
     for course in students[name]:
         if course in cuisines:
-            print("  " + course + " → Cuisine: " + ", ".join(cuisines[course]))
+            print("  " + course + ": " + cuisines[course][0] + ", " + cuisines[course][1])
         else:
-            items = []
-            for ice in ice_cream:
-                items.append(ice + " ($" + str(ice_cream[ice]) + ")")
-            print("  " + course + " → Ice Cream: " + ", ".join(items))
+            print("  " + course + ": Vanilla $" + str(ice_cream["Vanilla"]) + ", Chocolate $" + str(ice_cream["Chocolate"]))
+
