@@ -1,3 +1,24 @@
-#incoporate 3.2.4, printing students and their respective courses
-#3.2.1, food options and pricing (ice cream, different types)
-#incoporate both concepts into each other 
+ice_cream = {"Vanilla": 2.5, "Chocolate": 3.0}
+cuisines = {
+    "Latin": ["Pasta", "Tiramisu"],
+    "Chinese": ["Dumplings", "Fried Rice"],
+    "Spanish": ["Tacos", "Paella"],
+    "French": ["Croissant", "Quiche"]
+}
+
+students = {
+    "Alice": ["Math", "Latin"],
+    "Bob": ["French", "History"],
+    "Charlie": ["Art", "Chinese"]
+}
+
+for name in students:
+    print("\n" + name + "'s Courses and Food:")
+    for course in students[name]:
+        if course in cuisines:
+            print("  " + course + " → Cuisine: " + ", ".join(cuisines[course]))
+        else:
+            items = []
+            for ice in ice_cream:
+                items.append(ice + " ($" + str(ice_cream[ice]) + ")")
+            print("  " + course + " → Ice Cream: " + ", ".join(items))
