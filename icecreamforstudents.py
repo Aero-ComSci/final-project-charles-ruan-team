@@ -1,22 +1,27 @@
 ice_cream = {"Vanilla": 2.5, "Chocolate": 3.0}
 cuisines = {
-    "Latin/Italian": ["Pasta", "Tiramisu"],
+    "Latin": ["Pasta", "Tiramisu"],
     "Chinese": ["Dumplings", "Fried Rice"],
     "Spanish": ["Tacos", "Fajitas"],
     "French": ["Croissant", "Quiche"]
 }
 
-students = {
-    "Alice": ["Math", "Latin"],
-    "Bob": ["French", "History"],
-    "Charlie": ["Art", "Chinese"]
-}
+lang = input("Are you taking a language class? (yes/no): ")
 
-for name in students:
-    print(name + ":")
-    for course in students[name]:
-        if course in cuisines:
-            print("  " + course + ": " + cuisines[course][0] + ", " + cuisines[course][1])
-        else:
-            print("  " + course + ": Vanilla $" + str(ice_cream["Vanilla"]) + ", Chocolate $" + str(ice_cream["Chocolate"]))
+if lang.lower() == "yes":
+    which = input("Which language? (Latin/Chinese/Spanish/French): ")
+    if which in cuisines:
+        print("You get cuisine: " + cuisines[which][0] + ", " + cuisines[which][1])
+    else:
+        print("Language not found.")
+else:
+    print("Here are ice cream options:")
+    for flavor in ice_cream:
+        print("- " + flavor + ": $" + str(ice_cream[flavor]))
+    choice = input("Which ice cream would you like?: ")
+    if choice in ice_cream:
+        print("You chose " + choice + " - $" + str(ice_cream[choice]))
+    else:
+        print("Not available.")
+
 
