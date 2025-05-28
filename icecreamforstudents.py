@@ -1,3 +1,11 @@
+def get_valid_input(prompt, options):
+    while True:
+        answer = input(prompt).strip().title()
+        if answer in options:
+            return answer
+        else:
+            print("Invalid option. Try again.")
+
 vacations = {
     "Italy": {
         "Cuisine": ["Pasta", "Tiramisu"],
@@ -21,7 +29,6 @@ vacations = {
     }
 }
 
-
 ice_cream = {
     "Vanilla": 2.5,
     "Chocolate": 3.0
@@ -29,32 +36,25 @@ ice_cream = {
 
 print("🌞 You are on summer vacation! 🌴")
 
-travel = input("Do you want to travel? (yes/no): ").strip().lower()
+travel = get_valid_input("Do you want to travel? (Yes/No): ", ["Yes", "No"])
 
-if travel == "yes":
+if travel == "Yes":
     print("\nWhere would you like to go?")
     for place in vacations:
         print("- " + place)
-
-    choice = input("Choose your destination: ").strip().title()
-
-    if choice in vacations:
-        info = vacations[choice]
-        print("\n🏖️ Vacation Plan for " + choice + ":")
-        print("Hotel: " + info["Hotel"])
-        print("Flight Cost: $" + str(info["Flight"]))
-        print("Cuisine: " + info["Cuisine"][0] + ", " + info["Cuisine"][1])
-    else:
-        print("Sorry, we don't have that destination.")
+    
+    choice = get_valid_input("Choose your destination: ", vacations.keys())
+    info = vacations[choice]
+    print("\n🏖️ Vacation Plan for " + choice + ":")
+    print("Hotel: " + info["Hotel"])
+    print("Flight Cost: $" + str(info["Flight"]))
+    print("Cuisine: " + info["Cuisine"][0] + ", " + info["Cuisine"][1])
 else:
     print("\nNo problem! Enjoy some ice cream instead:")
     for flavor in ice_cream:
         print("- " + flavor + ": $" + str(ice_cream[flavor]))
-
-    pick = input("Which one would you like?: ").strip().title()
-    if pick in ice_cream:
-        print("You chose " + pick + " - $" + str(ice_cream[pick]))
-    else:
-        print("That flavor isn't available.")
+    
+    pick = get_valid_input("Which one would you like?: ", ice_cream.keys())
+    print("You chose " + pick + " - $" + str(ice_cream[pick]))
 
 
