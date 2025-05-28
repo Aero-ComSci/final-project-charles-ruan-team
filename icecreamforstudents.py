@@ -1,4 +1,3 @@
-
 vacations = {
     "Italy": {
         "Cuisine": ["Pasta", "Tiramisu"],
