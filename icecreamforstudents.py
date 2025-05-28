@@ -22,6 +22,6 @@ else:
     if choice in ice_cream:
         print("You chose " + choice + " - $" + str(ice_cream[choice]))
     else:
-        print("Not available.")
+        print("Option not available.")
 
 
